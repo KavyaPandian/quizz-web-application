@@ -1,0 +1,194 @@
+# React + TypeScript + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+🎉 Frontend Quiz Application
+
+A beautifully designed, interactive quiz application built using React + TypeScript + Vite, styled with TailwindCSS, and animated using Framer Motion.
+This project is inspired by a clean, modern UI similar to your Figma design — with smooth transitions, clickable answers, a progress bar, and a final score screen.
+
+
+✨ Features
+
+✔️ Modern and clean UI inspired by Figma
+✔️ Fully interactive quiz
+✔️ Smooth animated transitions
+✔️ Progress bar updates for each question
+✔️ Score calculation with a final results page
+✔️ Mobile-responsive design
+✔️ Built with React + TypeScript (best industry practice)
+✔️ TailwindCSS for clean styling
+✔️ Framer Motion animations
+
+🛠 Tech Stack
+Category	Technology
+Frontend	React, TypeScript, Vite
+Styling	TailwindCSS
+Animations	Framer Motion
+Assets	Custom icons + Google Fonts
+Deployment	Vercel / Netlify
+📁 Folder Structure
+frontend-quiz/
+ ├── public/
+ │    └── quizzz.png          # Favicon / Logo
+ ├── src/
+ │    ├── assets/             # images, backgrounds
+ │    ├── data/
+ │    │    └── questions.ts   # quiz questions
+ │    ├── pages/
+ │    │    ├── HomeQuiz.tsx
+ │    │    └── ResultPage.tsx
+ │    ├── shared/
+ │    │    ├── Navbar.tsx
+ │    │    ├── Option.tsx
+ │    │    ├── NavButtons.tsx
+ │    │    ├── QuestionCard.tsx
+ │    │    └── ProgressBar.tsx
+ │    ├── App.tsx
+ │    ├── index.css
+ │    └── main.tsx
+ ├── tailwind.config.js
+ ├── postcss.config.js
+ ├── tsconfig.json
+ ├── vite.config.ts
+ └── README.md
+
+⚙️ Installation & Setup
+1️⃣ Clone the repository
+git clone https://github.com/KavyaPandian/quizz-web-application
+cd frontend-quiz
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Start development server
+npm run dev
+
+
+It will run on:
+
+http://localhost:5173
+
+4️⃣ Build for production
+npm run build
+
+🎨 Fonts Used
+
+Playfair Display (Headings)
+
+Inter (Body text)
+
+Added via Google Fonts:
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+🧠 How Scoring Works
+
+Each correct answer → +1 score
+
+Final score calculated as:
+
+percentage = (correct_answers / total_questions) * 100
+
+🚀 Deployment Guide (Vercel)
+npm run build
+vercel
+
+
+Or drag-and-drop dist/ into Netlify.
+
+🤝 Contributing
+
+This project is open for improvements!
+You can:
+
+Add more questions
+
+Improve UI/animations
+
+Add a timer
+
+Add categories for quizzes
+
+Pull requests are welcome.
+
+📄 License
+
+MIT License — free to use & modify.
+
+❤️ Author
+
+Kavya Pandian
+Frontend Developer
+📧 kavyapandian15@gmail.com
+
+🔗 GitHub: https://github.com/KavyaPandian
