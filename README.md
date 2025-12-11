@@ -4,6 +4,9 @@
 A beautifully designed, interactive quiz application built using React + TypeScript + Vite, styled with TailwindCSS, and animated using Framer Motion.
 This project is inspired by a clean, modern UI similar to your Figma design — with smooth transitions, clickable answers, a progress bar, and a final score screen.
 
+SCREENSHOT:
+<img width="1865" height="857" alt="Screenshot 2025-12-10 225820" src="https://github.com/user-attachments/assets/c245f1e3-474b-45a9-91b4-ec40f5d653eb" />
+
 
 ✨ Features
 
